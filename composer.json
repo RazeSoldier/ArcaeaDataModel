@@ -1,6 +1,7 @@
 {
   "name": "razesoldier/arcaea-data-model",
   "description":"Object-oriented model of Arcaea game data structure",
+  "version": "v1.0.0",
   "keywords": ["arcaea"],
   "license": "GPL-2.0 or later",
   "authors": [
