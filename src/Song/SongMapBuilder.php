@@ -28,9 +28,10 @@ class SongMapBuilder
      */
     public function __construct(string $rawPath)
     {
-        if (!file_exists($this->rawPath)) {
+        if (!file_exists($rawPath)) {
             throw new \RuntimeException("$rawPath does not exist");
         }
+        $this->rawPath = $rawPath;
         $this->build();
     }
 
