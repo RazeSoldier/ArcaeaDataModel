@@ -56,8 +56,10 @@ class StepParser
                 $value = isset($this->data['items'][0]['amount']) ? $this->data['items'][0]['amount'] : $this->data['items'][0]['id'];
             } elseif ($type === 'character') {
                 $value = $this->data['items'][0]['id'];
+            } elseif ($type === 'world_song') {
+                $value = $this->data['item'][0]['id'];
             } else {
-                throw new \RuntimeException('May be issued unknown item');
+                throw new \RuntimeException("Failed to handle '$type'");
             }
             $step->setReward([$type => $value]);
         }
