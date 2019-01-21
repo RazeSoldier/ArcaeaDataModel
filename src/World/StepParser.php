@@ -57,7 +57,7 @@ class StepParser
             } elseif ($type === 'character') {
                 $value = $this->data['items'][0]['id'];
             } elseif ($type === 'world_song') {
-                $value = $this->data['item'][0]['id'];
+                $value = $this->data['items'][0]['id'];
             } else {
                 throw new \RuntimeException("Failed to handle '$type'");
             }
