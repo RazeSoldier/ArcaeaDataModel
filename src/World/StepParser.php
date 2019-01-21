@@ -52,7 +52,8 @@ class StepParser
         if (isset($this->data['items'])) {
             $type = $this->data['items'][0]['type'];
             if ($type === 'fragment') {
-                $value = $this->data['items'][0]['amount'];
+                // 保持不同json模式之间的兼容性
+                $value = isset($this->data['items'][0]['amount']) ? $this->data['items'][0]['amount'] : $this->data['items'][0]['id'];
             } elseif ($type === 'character') {
                 $value = $this->data['items'][0]['id'];
             } else {
