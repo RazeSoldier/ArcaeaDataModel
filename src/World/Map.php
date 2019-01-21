@@ -93,4 +93,9 @@ class Map
     {
         return $this->require['id'];
     }
+
+    public function getName() : string
+    {
+        return $this->name;
+    }
 }
