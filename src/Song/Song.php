@@ -18,6 +18,11 @@ class Song
     private $name;
 
     /**
+     * @var array 标题的翻译，key为语言代码，value为对应的翻译文本
+     */
+    private $i18nName = [];
+
+    /**
      * @var string 机器可读的名字
      */
     private $realName;
@@ -68,6 +73,23 @@ class Song
     public function getName() : string
     {
         return $this->name;
+    }
+
+    /**
+     * @return array
+     */
+    public function getI18nName() : array
+    {
+        return $this->i18nName;
+    }
+
+    /**
+     * @param string $langCode
+     * @param string $text
+     */
+    public function addI18nName(string $langCode, string $text) : void
+    {
+        $this->i18nName[$langCode] = $text;
     }
 
     /**

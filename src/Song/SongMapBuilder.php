@@ -45,6 +45,9 @@ class SongMapBuilder
         foreach ($json['songs'] as $song) {
             $songObj = new Song($song['title_localized']['en'], $song['id']);
             //$songObj->setTime($song['']); // TODO: 因技术原因目前暂时无法获得歌曲时间
+            foreach ($song['title_localized'] as $langCode => $text) {
+                $songObj->addI18nName($langCode, $text);
+            }
             $songObj->setArtist($song['artist']);
             $songObj->setBpm($song['bpm_base']);
             $songObj->setUpdateTime($song['date']);
