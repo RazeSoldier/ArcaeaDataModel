@@ -58,6 +58,8 @@ class StepParser
                 $value = $this->data['items'][0]['id'];
             } elseif ($type === 'world_song') {
                 $value = $this->data['items'][0]['id'];
+            } elseif ($type === 'core') {
+                $value = $this->data['items'][0]['amount'];
             } else {
                 throw new \RuntimeException("Failed to handle '$type'");
             }
@@ -71,3 +73,4 @@ class StepParser
         return $this->result;
     }
 }
+
